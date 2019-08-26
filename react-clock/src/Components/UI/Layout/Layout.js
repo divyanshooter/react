@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Layout.module.css';
 import Logo from '../Logo/Logo';
+
 const layout =(props)=>{
   
     return(
