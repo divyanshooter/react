@@ -1,0 +1,8 @@
+.logo
+{
+    width:70px;
+    height:70px;
+    background-color: rgb(50, 50, 80);
+    margin-right:10px;
+    display: inline-block;
+}
