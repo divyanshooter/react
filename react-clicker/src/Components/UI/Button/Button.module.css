@@ -1,0 +1,30 @@
+.button
+{
+    height:120px;
+    width:120px;
+    border:none;
+    margin:0;
+    outline: none;
+    padding: 0;
+}
+.plus
+{
+    background-color:rgba(16, 161, 16, 0.726);
+    color:white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.minus
+{
+    background-color:rgb(223, 67, 67);
+    color:white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+.restart
+{
+    background: rgb(248, 248, 56);
+    font-size: 3.5rem;
+    font-weight: bold;
+}
