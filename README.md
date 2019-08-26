@@ -1,3 +1,2 @@
-# First React Site
-# First React Site
+# React Project Practice
 # react
