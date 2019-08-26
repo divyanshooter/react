@@ -1,0 +1,34 @@
+.main
+{
+    margin-top:2rem;
+}
+.outer
+{
+    width: 300px;
+    height:300px;
+    border-radius:50%;
+    background-color:rgb(2, 44, 61);
+    text-align: center;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inner
+{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background-color:rgb(24, 25, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text
+{
+    font-size: 3rem;
+    color:rgb(21, 167, 235);
+
+}
