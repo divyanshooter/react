@@ -7,6 +7,7 @@ const Clock=(props)=>{
             <div className={classes.outer}>
                 <div className={classes.inner}>
                     <span className={classes.text}>{props.time}</span>
+                   {props.visible ? <span className={classes.date}>{props.date}</span>:null} 
                  
                 </div>
             </div>

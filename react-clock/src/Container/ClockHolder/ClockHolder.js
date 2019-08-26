@@ -7,13 +7,16 @@ class ClockHolder extends Component
       
      render()
        {
+      let day=['Sunday','Monday','Tuesday','Wednesday','Thurday','Friday','Saturday'];
+      let Month=['January','Feburary','March','April','May','June','July','August','September','October','November','December'];
        let date=new Date();
-       let k=date.getHours()+':'+date.getMinutes()+':'+date.getUTCSeconds();
-        console.log(k);
+       let time=date.getHours()+':'+date.getMinutes()+':'+date.getUTCSeconds();
+       let dates=day[date.getDay()]+ ' ' +date.getDate()+ ' ' +Month[date.getMonth()]+ ' ' +date.getFullYear();
+
          return (
               <div>
                   <CalendarControl/>
-                  <Clock time={k}/>
+                  <Clock time={time} date={dates} visible="false"/>
               </div>
             
                 );
