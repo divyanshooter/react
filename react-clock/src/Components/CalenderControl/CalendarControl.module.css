@@ -8,12 +8,30 @@
 .button
 {
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius:1rem;
+    outline: none;
 
 }
+.on 
+{
+    background-color:blueviolet;
+    color:yellow;
 
+}
+.on:hover
+{
+    border:3px solid blue;
+}
+.off
+{
+    background-color:'grey';
+}
+.off:hover
+{
+    border:3px solid black;
+}
 .img
 {
     width:65px;

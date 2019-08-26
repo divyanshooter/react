@@ -4,19 +4,30 @@ import Clock from '../../Components/Clock/Clock';
  
 class ClockHolder extends Component
     {
-      
+      state={
+        visible:false,
+        date:new Date()
+      }
+      toggleEventHandler=()=>{
+        let value=this.state.visible;
+        this.setState({visible:!value});
+      }
+       componentDidMount()
+       {
+        setInterval(()=>
+        {
+          
+          let date=new Date();
+          this.setState({date:date});
+        },10);
+       
+        }
      render()
        {
-      let day=['Sunday','Monday','Tuesday','Wednesday','Thurday','Friday','Saturday'];
-      let Month=['January','Feburary','March','April','May','June','July','August','September','October','November','December'];
-       let date=new Date();
-       let time=date.getHours()+':'+date.getMinutes()+':'+date.getUTCSeconds();
-       let dates=day[date.getDay()]+ ' ' +date.getDate()+ ' ' +Month[date.getMonth()]+ ' ' +date.getFullYear();
-
-         return (
+        return (
               <div>
-                  <CalendarControl/>
-                  <Clock time={time} date={dates} visible="false"/>
+                  <CalendarControl clicked={this.toggleEventHandler} visible={this.state.visible}/>
+                  <Clock date={this.state.date} visible={this.state.visible}  />
               </div>
             
                 );
