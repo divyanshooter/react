@@ -1,0 +1,29 @@
+.main
+{
+    background-color:rgba(128,128,128,0.3);
+    border:2px solid black; 
+    margin-top:1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    /* width:70%; */
+    box-sizing: border-box;
+    display: inline-block;
+}
+.sender
+{
+    font-size:0.8rem;
+    font-weight:bolder;
+    color:blue;
+    text-align: left;
+    margin-left:1rem;
+}
+.body
+{
+    background-color:grey;
+    font-size: 0.9rem;
+    font-weight:600; 
+    color:white;
+    padding:0 1rem;
+    
+
+}

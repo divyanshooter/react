@@ -1,0 +1,26 @@
+.App
+{
+  display: grid;
+  grid-template-rows: 85% 15%;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "Rooms Message"
+                        "New Send";
+  height:100vh;
+}
+
+.room
+{
+  grid-area: Rooms;
+}
+.message
+{
+  grid-area: Message;
+}
+.new
+{
+  grid-area: New;
+}
+.send
+{
+  grid-area: Send;
+}
