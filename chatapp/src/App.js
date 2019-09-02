@@ -9,9 +9,15 @@ import {tokenUrl,instanceLocator} from './config';
 
 class App extends Component
 {
-  state={
-     messages:[]
+  constructor()
+  {
+    super();
+    this.state={
+      messages:[]
+   }
+    this.sendMessage=this.sendMessage.bind(this);
   }
+  
   componentDidMount()
   {
     const ChatManager=new Chatkit.ChatManager({
@@ -23,7 +29,8 @@ class App extends Component
     })
     ChatManager.connect()
      .then(currUser=>{
-        currUser.subscribeToRoom({
+        this.currUser=currUser;
+        this.currUser.subscribeToRoom({
           roomId:"6ee3cac3-32f3-49c8-ab96-08a84dded8cc",
           hooks:
           {
@@ -37,6 +44,13 @@ class App extends Component
         })
      })
   }
+  sendMessage(text)
+   {
+     this.currUser.sendMessage({
+       text,
+       roomId:'6ee3cac3-32f3-49c8-ab96-08a84dded8cc'
+     })
+   }
   render()
       {
         return (
@@ -44,7 +58,7 @@ class App extends Component
             <Room toadd={classes.room}/>
             <MessageList messages={this.state.messages} toadd={classes.message}/>
             <NewRoom toadd={classes.new}/>
-            <Send toadd={classes.send}/>
+            <Send sendMessage={this.sendMessage} toadd={classes.send}/>
       
           </div>
         );

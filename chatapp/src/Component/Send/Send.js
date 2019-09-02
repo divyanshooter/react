@@ -1,15 +1,46 @@
-import React from 'react';
+import React,{Component} from 'react';
 import classes from './Send.module.css';
-const send=(props)=>{
-    let classArray=[classes.main,props.toadd].join(' ');
-    return (
-         <div className={classArray}>
-            <form>
-                <input className={classes.input} type="text" placeholder="Send Message"></input>
-                <button className={classes.button} type="submit" > Send</button>
-            </form>
-         </div>
-    );
+class Send extends Component{
+    constructor()
+    {
+      super();
+      this.state={
+        message:' '
+    }
+      this.changeHandler=this.changeHandler.bind(this)
+      this.submitHandler=this.submitHandler.bind(this)
+    }
+    
+  changeHandler(event)
+    {
+        this.setState({
+            message:event.target.value
+        });
+    }
+    submitHandler(event)
+    {
+        event.preventDefault();
+        this.props.sendMessage(this.state.message);
+    }
+
+    render()
+    {
+        const classArray=[classes.main,this.props.toadd].join(' ');
+        return (
+             <div className={classArray}>
+                <form onSubmit={this.submitHandler}>
+                    <input 
+                     onChange={this.changeHandler}
+                     className={classes.input} 
+                     value={this.state.message}
+                     type="text" 
+                     placeholder="Send Message"></input>
+                    <button className={classes.button} type="submit" > Send</button>
+                </form>
+             </div>
+        );
+    }
+    
 }
 
-export default send;
+export default Send;
