@@ -4,23 +4,23 @@ import classes from './Messages.module.css';
 
 const messageList=(props)=>{
     const classArray=[props.toadd,classes.main].join(' ');
-    const message=[{
-       sender:'Divyanshu',
-       body:'Hi,Welcome To my app.' 
-    },
-    {
-        sender:'Chirag',
-        body:'Hi,I am Chirag.' 
-     },
-     {
-        sender:'Priyanshu',
-        body:'I am Priyanshu.' 
-     },
-];
-const messageD=message.map((cur,i)=>{
+    // const message=[{
+    //    sender:'Divyanshu',
+    //    body:'Hi,Welcome To my app.' 
+    // },
+    // {
+    //     sender:'Chirag',
+    //     body:'Hi,I am Chirag.' 
+    //  },
+    //  {
+    //     sender:'Priyanshu',
+    //     body:'I am Priyanshu.' 
+    //  },
+// ];
+const messageD=props.messages.map((cur,i)=>{
     return(
-         <div>
-             <Message sender={cur.sender} body={cur.body}/>
+         <div key={cur+i}>
+             <Message sender={cur.senderId} body={cur.text}/>
         </div>
     );
 });
