@@ -1,0 +1,27 @@
+.room
+{
+    background: rgba(230, 28, 152,0.5);
+    color: rgb(236, 15, 15);
+    font-size: 1.5rem;
+    font-weight:bolder;
+    text-align: center;
+    height:100%;
+}
+.listItems
+{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.listItem
+{
+    text-decoration: none;
+    color:red;
+
+}
+.active
+{
+    border:1px solid rgba(230, 28, 152);
+    background:rgba(230, 28, 152,0.6);
+
+}

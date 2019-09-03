@@ -21,6 +21,7 @@ class Send extends Component{
     {
         event.preventDefault();
         this.props.sendMessage(this.state.message);
+        this.setState({message:''});
     }
 
     render()
@@ -30,6 +31,7 @@ class Send extends Component{
              <div className={classArray}>
                 <form onSubmit={this.submitHandler}>
                     <input 
+                     disabled={this.props.disabled}
                      onChange={this.changeHandler}
                      className={classes.input} 
                      value={this.state.message}

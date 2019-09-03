@@ -1,0 +1,34 @@
+.main
+{
+    background:rgba(0,255,100,0.7);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.input
+{
+    margin:0.6rem 1rem;
+    margin-bottom: 0;
+    height:2rem;
+    width:85%;
+}
+.input:focus
+{
+   outline: 2px solid rebeccapurple;
+}
+.button
+{
+    padding:1rem;
+    background: green;
+    color:white;
+    margin:0.5rem 0rem;
+    margin-left: 3.4rem;
+    border-radius: 10px;
+}
+.button:hover
+{
+    color:green;
+    background:greenyellow;
+    font-weight: bolder;
+    font-size:1rem;
+    border:1px solid green;
+}
