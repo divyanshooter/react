@@ -1,0 +1,47 @@
+.main
+{
+    grid-area: send;
+    position: relative;
+    z-index: 1;
+}
+.container
+{
+    display:flex;
+    justify-content: space-arounds;
+    
+}
+.input
+{
+    width:88%;
+    border:2px solid darkorange; 
+    border-radius:8rem;
+    padding: 1rem;
+    margin-right:0.1rem;
+    outline: none;
+}
+.input:focus
+{
+    outline: none;
+}
+.send
+{
+    padding:1rem;
+    border-radius:10rem;
+    color:white;
+    /* background: rgba(50,0,220,0.7); */
+    background:white;
+    font: 1.3rem bolder;
+    border:none;
+}
+.send:hover,
+.send:active
+{
+    transform: rotateZ(42deg);
+}
+.send img
+{
+     display: inline-block;
+     width:25px;
+     height:25px;
+     background: purple;
+}

@@ -1,0 +1,38 @@
+.main
+{
+    background:gainsboro;
+    height:100%;
+    width: 100%;
+    grid-area: chats;
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows:5% 80% 15%;
+    grid-template-areas: "status"
+                         "messages"
+                          "send";
+
+}
+.message
+{
+    grid-area: messages;
+    overflow:auto;
+}
+
+.messageDiv
+{
+    text-align: right;
+}
+
+.typing
+{
+    color:rgba(0,250,0,1);
+    font-weight: bolder;
+    font-size: 1.2rem;
+    position: absolute;
+    width:95%;
+    bottom:90px;
+    text-align: right;
+    box-sizing: border-box;
+    margin-right: 4rem;
+}

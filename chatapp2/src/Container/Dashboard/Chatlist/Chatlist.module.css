@@ -1,0 +1,51 @@
+.chatlist
+{
+    grid-area:chatlist;
+    display: relative;
+    z-index: 10;
+    background:rgba(183,148,148,0.5);
+    
+}
+
+.container
+{
+    position: relative;
+}
+.chatlistDiv
+{
+    border:1px solid black;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    padding: 0.6rem;
+    display:inline-block;
+    font-size:1.5rem;
+    font-weight: bold;
+    text-align:center;
+    margin:1rem;
+    margin-right:0;
+
+}
+.chatlistP
+{
+    display: inline-block;
+    margin:0 0.9rem;
+}
+.chatlistHr
+{
+    margin:0;
+    height:0.2rem;
+    background-color:red;
+    padding: 0;
+}
+.online
+{
+    background-color:green;
+    border-radius:50%;
+    height: 10px;
+    width:10px;
+    position: absolute;
+    top:45%;
+    right:20%;
+    margin-left:1rem;
+}
