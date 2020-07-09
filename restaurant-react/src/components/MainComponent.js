@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import Header from "./HeaderComponent";
 import Menu from "./MenuComponent";
 import DishDetail from "./DishdetailComponent";
+import Footer from "./FooterComponent";
 import { DISHES } from "../shared/dishes";
 
 class Main extends Component {
@@ -15,11 +16,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Navbar dark color="dark">
-          <div className="container">
-            <NavbarBrand href="/">DC Khao</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <div className="container">
           <Menu
             dishes={this.state.dishes}
@@ -33,6 +30,7 @@ class Main extends Component {
             }
           />
         </div>
+        <Footer />
       </div>
     );
   }
