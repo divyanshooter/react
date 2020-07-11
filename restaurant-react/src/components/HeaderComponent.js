@@ -28,7 +28,7 @@ export default class HeaderComponent extends Component {
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
-              DC Khao
+              DC Khao 
               <img
                 src="assets/images/logo.png"
                 height="30"
