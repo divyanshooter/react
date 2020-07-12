@@ -77,7 +77,12 @@ class Contact extends Component {
     return errors;
   };
   render() {
-    const errors=this.validate(this.state.firstname,this.state.lastname,this.state.email,this.state.telnum);
+    const errors = this.validate(
+      this.state.firstname,
+      this.state.lastname,
+      this.state.email,
+      this.state.telnum
+    );
     return (
       <div className="container">
         <div className="row">
@@ -155,9 +160,9 @@ class Contact extends Component {
                     id="firstname"
                     name="firstname"
                     placeholder="First Name"
-                    valid={errors.firstname===''}
-                    invalid={errors.firstname!==''}
-                    onBlur={()=>this.handleBlur('firstname')}
+                    valid={errors.firstname === ""}
+                    invalid={errors.firstname !== ""}
+                    onBlur={() => this.handleBlur("firstname")}
                     onChange={this.handleInput}
                   />
                   <FormFeedback>{errors.firstname}</FormFeedback>
@@ -174,9 +179,9 @@ class Contact extends Component {
                     id="lastname"
                     name="lastname"
                     placeholder="Last Name"
-                    valid={errors.lastname===''}
-                    invalid={errors.lastname!==''}
-                    onBlur={()=>this.handleBlur('lastname')}
+                    valid={errors.lastname === ""}
+                    invalid={errors.lastname !== ""}
+                    onBlur={() => this.handleBlur("lastname")}
                     onChange={this.handleInput}
                   />
                   <FormFeedback>{errors.lastname}</FormFeedback>
@@ -193,9 +198,9 @@ class Contact extends Component {
                     id="telnum"
                     name="telnum"
                     placeholder="Tel. Number"
-                    valid={errors.telnum===''}
-                    invalid={errors.telnum!==''}
-                    onBlur={()=>this.handleBlur('telnum')}
+                    valid={errors.telnum === ""}
+                    invalid={errors.telnum !== ""}
+                    onBlur={() => this.handleBlur("telnum")}
                     onChange={this.handleInput}
                   />
                   <FormFeedback>{errors.telnum}</FormFeedback>
@@ -212,9 +217,9 @@ class Contact extends Component {
                     id="email"
                     name="email"
                     placeholder="Email"
-                    valid={errors.email===''}
-                    invalid={errors.email!==''}
-                    onBlur={()=>this.handleBlur('email')}
+                    valid={errors.email === ""}
+                    invalid={errors.email !== ""}
+                    onBlur={() => this.handleBlur("email")}
                     onChange={this.handleInput}
                   />
                   <FormFeedback>{errors.email}</FormFeedback>
