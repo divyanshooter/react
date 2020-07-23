@@ -15,7 +15,7 @@ const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => ! val || val.length >= len;
 const isNumber = (val) => !isNaN(Number(val));
 const isEmail = (val) =>
-  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 class Contact extends Component {
  
 
@@ -174,7 +174,7 @@ class Contact extends Component {
                       required:'Required',
                       minLength:'Must be greater than 2 characters',
                       maxLength:'Must be smaller than 15 characters',
-                      isNum:'Only Numbers are allowed'
+                      isNumber:'Only Numbers are allowed'
                     }}
                   />
                 </Col>
@@ -197,7 +197,7 @@ class Contact extends Component {
                   />
                    <Errors
                     className="text-danger"
-                    model=".tel"
+                    model=".email"
                     show="touched"
                     messages={{
                       required:'Required',
