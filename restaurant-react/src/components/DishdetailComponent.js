@@ -35,7 +35,8 @@ class CommentForm extends Component {
     });
   };
   handleSubmit = (values) => {
-    alert(JSON.stringify(values));
+     this.toggleModal();
+     this.props.addComment(this.props.dishId,values.rating,values.name,values.comment);
   };
 
   render() {
@@ -163,7 +164,7 @@ const RenderComments = (props) => {
             </li>
           );
         })}
-        <CommentForm />
+        <CommentForm addComment={props.addComment} dishId={props.dishId}/>
       </div>
     );
   } else {
@@ -187,7 +188,7 @@ const DishDetail = (props) => {
       </div>
       <div className="row">
         <RenderDish dish={props.dish} />
-        <RenderComments comments={props.dish ? props.comments : null} />
+        <RenderComments comments={props.dish ? props.comments : null} addComment={props.addComment} dishId={props.dish.id} />
       </div>
     </div>
   );
