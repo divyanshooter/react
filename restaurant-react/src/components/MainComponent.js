@@ -42,12 +42,12 @@ class Main extends Component {
         <Home
           dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
           dishesLoading={this.props.dishes.isLoading}
-          dishesError={this.props.dishes.dishesError}
+          dishesError={this.props.dishes.error}
           promotion={
             this.props.promotions.promotions.filter((promotion) => promotion.featured)[0]
           }
           promosLoading={this.props.promotions.isLoading}
-          promosError={this.props.promotions.dishesError}
+          promosError={this.props.promotions.error}
           leader={this.props.leaders.filter((leader) => leader.featured)[0]}
         />
       );

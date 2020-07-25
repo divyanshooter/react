@@ -3,7 +3,7 @@ import * as ActionTypes from "./ActionTypes";
 export const Dishes = (
   state = {
     isLoading: true,
-    error: "",
+    error: null,
     dishes: [],
   },action) => {
   switch (action.type) {

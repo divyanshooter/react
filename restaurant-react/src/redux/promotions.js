@@ -3,7 +3,7 @@ import * as ActionTypes from "./ActionTypes";
 export const Promotions = (
   state = {
     isLoading: true,
-    error: "",
+    error: null,
     promotions: [],
   },action) => {
   switch (action.type) {

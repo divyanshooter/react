@@ -3,7 +3,7 @@ import * as ActionTypes from './ActionTypes';
 
 export const Comments=(state = {
     isLoading: true,
-    error: "",
+    error: null,
     comments: [],
   },action)=>{
     

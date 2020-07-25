@@ -13,9 +13,11 @@ import Loading from './LoadingComponent';
 const RenderCard = (props) => {
   if (props.isLoading) {
     return <Loading />;
-  } else if (props.error) {
+  }
+   else if (props.error) {
     return <h4>{props.error}</h4>;
-  } else {
+  } 
+  else {
     return (
       <Card>
         <CardImg src={baseURl+ props.item.image} alt={props.item.name} />
