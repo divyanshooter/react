@@ -1,4 +1,5 @@
 import React from "react";
+import {baseURl} from '../shared/baseURL';
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -9,11 +10,12 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import Loading from "./LoadingComponent";
+
 const RenderDishItem = (props) => {
   return (
     <Card>
       <Link to={`/menu/${props.dish.id}`}>
-        <CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
+        <CardImg width="100%" src={baseURl+ props.dish.image} alt={props.dish.name} />
         <CardImgOverlay>
           <CardTitle>{props.dish.name}</CardTitle>
         </CardImgOverlay>

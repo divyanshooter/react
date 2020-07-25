@@ -1,4 +1,5 @@
 import React from "react";
+import  {baseURl} from '../shared/baseURL';
 import {
   Card,
   CardImg,
@@ -17,7 +18,7 @@ const RenderCard = (props) => {
   } else {
     return (
       <Card>
-        <CardImg src={props.item.image} alt={props.item.name} />
+        <CardImg src={baseURl+ props.item.image} alt={props.item.name} />
         <CardBody>
           <CardTitle>{props.item.name}</CardTitle>
           {props.item.designation ? (
@@ -42,7 +43,10 @@ export default function HomeComponent(props) {
           />
         </div>
         <div className="col-12 col-md m-1">
-          <RenderCard item={props.promotion} />
+          <RenderCard 
+            item={props.promotion}  
+            isLoading={props.promosLoading}
+            error={props.promosError} />
         </div>
         <div className="col-12 col-md m-1">
           <RenderCard item={props.leader} />
