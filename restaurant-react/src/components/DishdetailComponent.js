@@ -17,6 +17,7 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Control, Errors, LocalForm } from "react-redux-form";
+import Loading from './LoadingComponent';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -172,6 +173,25 @@ const RenderComments = (props) => {
   }
 };
 const DishDetail = (props) => {
+  if(props.isLoading) {
+    return (
+      <div className="conatiner">
+        <div className="row">
+          <Loading/>
+        </div>
+      </div>
+    )
+  }
+  else if(props.error) {
+    return (
+      <div className="conatiner">
+        <div className="row">
+          <h4>{props.error}</h4>
+        </div>
+      </div>
+    )
+  }
+  else if(props.dish!=null) {
   return (
     <div className="container">
       <div className="row">
@@ -192,6 +212,10 @@ const DishDetail = (props) => {
       </div>
     </div>
   );
+  }
+  else {
+    return <div></div>
+  }
 };
 
 export default DishDetail;
