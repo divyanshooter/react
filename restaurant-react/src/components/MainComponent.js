@@ -10,6 +10,7 @@ import About from "./AboutUsComponent";
 import Footer from "./FooterComponent";
 import {
   postComment,
+  postFeedback,
   fetchDishes,
   fetchComments,
   fetchPromos,
@@ -36,6 +37,7 @@ const mapsDispatchToProps = (dispatch) => {
     fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
     resetFeedbackForm: () => dispatch(actions.reset("feedback")),
+    postFeedback:(values)=>dispatch(postFeedback(values))
   };
 };
 
@@ -87,7 +89,10 @@ class Main extends Component {
     };
 
     const AboutComponet = () => {
-      return <About leaders={this.props.leaders}  />;
+      return <About 
+            leaders={this.props.leaders.leaders} 
+            isLoading={this.props.leaders.isLoading}
+            error={this.props.leaders.error}  />;
     };
     return (
       <div>
@@ -107,7 +112,7 @@ class Main extends Component {
                 exact
                 path="/contactus"
                 component={() => (
-                  <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
+                  <Contact submitFeedbackForm={this.props.postFeedback} resetFeedbackForm={this.props.resetFeedbackForm} />
                 )}
               />
               <Redirect to="/home" />

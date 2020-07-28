@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import { DISHES } from "../shared/dishes";
 import {baseURl} from '../shared/baseURL';
 
 
@@ -198,3 +197,39 @@ export const addLeaders=(leaders)=>({
     type:ActionTypes.ADD_LEADERS,
     payload:leaders
 });
+
+
+// Feedback Form 
+export const postFeedback=(values)=>dispatch=>{
+    return fetch(baseURl +'feedback',{
+        method:'POST',
+        body:JSON.stringify(values),
+        headers:{
+            'Content-Type':'application/json'
+        },
+        credentials:'same-origin'
+    })
+    .then(response=>{
+        if(response.ok) {
+            return response;
+        }
+        else {
+            var error=new Error('Error' + response.status + ' : ' + response.statusText);
+            error.response=response;
+            throw error;
+        }
+    },
+    error=>{
+        var errmess=new Error(error.message);
+        throw errmess;
+    })
+   .then(response=>response.json())
+   .then(feedback=>{
+       alert("Thank you for the feedback!\n"+JSON.stringify( feedback))
+    })
+   .catch(error=>{
+       console.log('Feedback Form ', error.message);
+       alert('Your form could not be sumbitted\nError: '+ error.message);
+   });
+}
+

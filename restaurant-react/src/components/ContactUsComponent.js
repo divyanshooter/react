@@ -10,17 +10,19 @@ import {
   Col,
 } from "reactstrap";
 
+
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => ! val || val.length >= len;
 const isNumber = (val) => !isNaN(Number(val));
 const isEmail = (val) =>
 /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
 class Contact extends Component {
  
 
   handleSubmit = (values) => {
-    alert(JSON.stringify(values));
+    this.props.submitFeedbackForm(values);
     this.props.resetFeedbackForm();
   };
 
@@ -155,7 +157,7 @@ class Contact extends Component {
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".tel"
+                    model=".telnum"
                     className="form-control"
                     id="telnum"
                     validators={{
@@ -169,7 +171,7 @@ class Contact extends Component {
                   />
                    <Errors
                     className="text-danger"
-                    model=".tel"
+                    model=".telnum"
                     show="touched"
                     messages={{
                       required:'Required',

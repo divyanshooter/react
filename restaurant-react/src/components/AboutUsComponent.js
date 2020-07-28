@@ -8,28 +8,48 @@ import {
   Media,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import Loading from "./LoadingComponent";
+import { baseURl } from "../shared/baseURL";
+import {Fade,Stagger} from 'react-animation-components';
 
 const RenderLeader = (props) => {
+  // error handling is added at bottom at start of aboutus component
   return (
-    <div className="col-12 mt-5">
-      <Media tag="li">
-        <Media left>
-          <Media object src={props.leader.image} alt={props.leader.name} />
+    <Fade in>
+      <div className="col-12 mt-5">
+        <Media tag="li">
+          <Media left>
+            <Media
+              object
+              src={baseURl + props.leader.image}
+              alt={props.leader.name}
+            />
+          </Media>
+          <Media body className="ml-5">
+            <Media heading>{props.leader.name}</Media>
+            <p>{props.leader.designation}</p>
+            <p>{props.leader.description}</p>
+          </Media>
         </Media>
-        <Media body className="ml-5">
-          <Media heading>{props.leader.name}</Media>
-          <p>{props.leader.designation}</p>
-          <p>{props.leader.description}</p>
-        </Media>
-      </Media>
-    </div>
-  );
+      </div>
+      </Fade>
+    );
+  
 };
 
 function About(props) {
-  const leaders = props.leaders.map((leader) => {
+  let leaders;
+  if (props.isLoading) {
+    leaders= <Loading />;
+  } 
+  else if (props.error) {
+    leaders= <h4>{props.error}</h4>;
+  } 
+  else {
+   leaders = props.leaders.map((leader) => {
     return <RenderLeader leader={leader} />;
   });
+}
 
   return (
     <div className="container">
@@ -107,7 +127,9 @@ function About(props) {
           <h2>Corporate Leadership</h2>
         </div>
         <div className="col-12">
+          <Stagger in>
           <Media list>{leaders}</Media>
+          </Stagger>
         </div>
       </div>
     </div>
