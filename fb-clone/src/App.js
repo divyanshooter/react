@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/header/header";
 import SideBar from "./components/sidebar/sidebar";
+import Feed from './components/feed/feed';
 import "./App.css";
 
 function App() {
@@ -8,9 +9,9 @@ function App() {
     // BEM Naming Convention for css class name
     <div className="app">
       <Header />
-      <div classname="app__body">
+      <div className="app__body">
          <SideBar/>
-        {/* feed */}
+         <Feed/>
         {/* widgets */}
       </div>
     </div>
