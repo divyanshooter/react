@@ -1,17 +1,18 @@
-import React from 'react';
-import Header from './components/header/header';
-import './App.css';
+import React from "react";
+import Header from "./components/header/header";
+import SideBar from "./components/sidebar/sidebar";
+import "./App.css";
 
 function App() {
   return (
     // BEM Naming Convention for css class name
     <div className="app">
       <Header />
-      {/* Header */}
-      {/* App body */}
-      {/* SideBar */}
-      {/* feed */}
-       {/* widgets */}
+      <div classname="app__body">
+         <SideBar/>
+        {/* feed */}
+        {/* widgets */}
+      </div>
     </div>
   );
 }
